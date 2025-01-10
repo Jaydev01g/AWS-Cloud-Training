@@ -95,3 +95,259 @@ instances are placed on a server).
 • May share hardware with other non-dedicated instances in the same account.
 • Available as On-Demand, Reserved Instances, and Spot Instances.
 • Cost additional $2 per hour per region.
+• Savings Plans is a flexible pricing model that provides savings of up to 72% on your AWS compute usage.
+• This pricing model offers lower prices on Amazon EC2 instances usage, regardless of instance family, size, OS, tenancy, or AWS Region.
+• Also applies to AWS Fargate and AWS Lambda usage.
+
+#### INSTANCE TYPES
+Amazon EC2 provides a wide selection of instance types optimized to fit different use cases.Instance types comprise varying combinations of CPU, memory, storage, and networking capacity and give you the flexibility to choose the appropriate mix of resources for your applications.Each instance type includes one or more instance sizes, allowing you to scale your resources to the requirements of your target workload.
+The table below helps you to understand some of the various EC2 instance families and their intended use case:
+![image](https://github.com/user-attachments/assets/f31d17b5-e14c-4d07-8483-3dc849905edb)
+
+
+# AMAZON ELASTIC CONTAINER SERVICE (ECS)
+
+Amazon Elastic Container Service (ECS) is another product in the AWS Compute category. It provides a highly scalable, high performance container management service that supports Docker containers and allows you to easily run applications on a managed cluster of Amazon EC2 instances.Amazon ECS eliminates the need for you to install, operate, and scale your own cluster management infrastructure. Using API calls you can launch and stop container-enabled applications, query the 
+complete state of clusters, and access many familiar features like security groups, Elastic Load Balancing, EBS volumes and IAM roles.Amazon ECS can be used to schedule the placement of containers across clusters based on resource needs and availability requirements. An Amazon ECS launch type determines the type of infrastructure on which your tasks and services are hosted.
+
+There are two launch types, and the table below describes some of the differences between the two launch types:
+
+![image](https://github.com/user-attachments/assets/533d16be-4b03-4da2-8db3-e1d0a612c407)
+
+
+## AWS LAMBDA
+AWS Lambda is a serverless computing technology that allows you to run code without provisioning or managing servers.AWS Lambda executes code only when needed and scales automatically.You pay only for the compute time you consume (you pay nothing when your code is not running).
+#### Benefits of AWS Lambda:
+• No servers to manage.
+• Continuous scaling.
+• Millisecond billing.
+• Integrates with almost all other AWS services.
+
+##### Primary use cases for AWS Lambda:
+• Data processing.
+• Real-time file processing.
+• Real-time stream processing.
+• Build serverless backends for web, mobile, IOT, and 3rd party API requests.
+
+## AMAZON LIGHTSAIL
+##### Amazon LightSail Instances
+Amazon LightSail is one of the newest services in the AWS Compute suite of products. Amazon LightSail is great for users who do not have deep AWS technical expertise as it 
+makes it very easy to provision compute services. Amazon LightSail provides developers compute, storage, and networking capacity and capabilities to deploy and manage websites, web applications, and databases in the cloud. Amazon LightSail includes everything you need to launch your project quickly – a virtual machine, SSD-based storage, data transfer, DNS management, and a static IP .Amazon LightSail provides preconfigured virtual private servers (instances) that include everything required to deploy and application or create a database. The underlying infrastructure and operating system are managed by Amazon LightSail.
+
+Best suited to projects that require a few dozen instances or fewer.
+
+Provides a simple management interface.
+
+Good for blogs, websites, web applications, e-commerce etc.
+
+Can deploy load balancers and attach block storage.
+
+Public API.
+
+databases, and 5 load balancers per account.
+
+Up to 20 certificates per calendar year.
+
+Can connect to each other and other AWS resources through public Internet and private (VPC peering) networking.
+
+Application templates include WordPress, WordPress Multisite, Drupal, Joomla!, Magento, Redmine, LAMP, Nginx (LEMP), MEAN, Node.js, and more.
+
+Amazon LightSail currently supports 6 Linux or Unix-like distributions: Amazon Linux, CentOS, Debian, FreeBSD, OpenSUSE, and Ubuntu, as well as 2 Windows Server versions: 
+2012 R2 and 2016.
+
+### AMAZON LIGHTSAIL DATABASES
+Amazon LightSail databases are instances that are dedicated to running databases.
+An Amazon LightSail database can contain multiple user-created databases, and you can 
+access it by using the same tools and applications that you use with a stand-alone 
+database.
+Amazon LightSail managed databases provide an easy, low maintenance way to store your 
+data in the cloud.
+Amazon LightSail manages a range of maintenance activities and security for your database 
+and its underlying infrastructure.
+Amazon LightSail automatically backs up your database and allows point in time restore 
+from the past 7 days using the database restore tool.
+Amazon LightSail databases support the latest major versions of MySQL. Currently, these 
+versions are 5.6, 5.7, and 8.0 for MySQL.
+Amazon LightSail databases are available in Standard and High Availability plans.
+High Availability plans add redundancy and durability to your database, by automatically 
+creating standby database in a separate Availability Zone.
+Amazon LightSail is very affordable.
+Amazon LightSail plans are billed on an on-demand hourly rate, so you pay only for what 
+you use.
+For every Amazon LightSail plan you use, we charge you the fixed hourly price, up to the 
+maximum monthly plan cost.
+
+### AWS ELASTIC BEANSTALK
+AWS Elastic Beanstalk is the fastest and simplest way to get web applications up and 
+running on AWS.
+Developers simply upload their application code, and the service automatically handles all 
+the details such as resource provisioning, load balancing, auto-scaling, and monitoring.
+Elastic Beanstalk is ideal if you have a PHP, Java, Python, Ruby, Node.js, .NET, Go, or Docker 
+web application.
+Elastic Beanstalk uses core AWS services such as Amazon EC2, Amazon Elastic Container 
+Service (Amazon ECS), Auto Scaling, and Elastic Load Balancing to easily support 
+applications that need to scale to serve millions of users.
+
+### AWS BATCH
+AWS Batch enables developers, scientists, and engineers to run hundreds of thousands of 
+batch computing jobs easily and efficiently on AWS.
+AWS Batch dynamically provisions the optimal quantity and type of compute resources 
+(e.g., CPU or memory optimized instances) based on the volume and specific resource 
+requirements of the batch jobs submitted.
+With AWS Batch, you simply package the code for your batch jobs, specify their 
+dependencies, and submit your batch job using the AWS Management Console, CLIs, or 
+SDKs.
+AWS Batch allows you to specify execution parameters and job dependencies and
+facilitates integration with a broad range of popular batch computing workflow engines 
+and languages (e.g., Pegasus WMS, Luigi, and AWS Step Functions).
+AWS Batch efficiently and dynamically provisions and scales Amazon 
+EC2 and Spot Instances based on the requirements of your jobs. AWS Batch provides 
+default job queues and compute environment definitions that enable you to get started 
+quickly.
+
+#### AWS COMPUTE QUIZ QUESTIONS
+Answers and explanations are provided below after the last question in this section.
+Question: Question 1: Which of the following is NOT a benefit of AWS Lambda?
+1. No servers to manage
+2. Pay only when your code is running
+3. Continuous scaling
+4. Multiple instance types to choose from
+
+Question 2: Which service can assist a developer with quickly deploying and managing a 
+web application on AWS?
+1. AWS CloudFormation
+2. AWS Elastic Beanstalk
+   
+Question 3: AWS Elastic Beanstalk is an example of which cloud computing service 
+model?
+1. On-premises
+2. Infrastructure as a Service (IaaS)
+3. Platform as a Service (PaaS)
+4. Software as a Service (SaaS)
+   
+Question 4: What is a benefit of Amazon EC2 compared to traditional servers?
+1. You can use specialized hardware
+2. You have more control over the operating system
+3. You can scale elastically within minutes
+4. You get more compute power in the cloud
+   
+Question 5: How can you run commands on an Amazon EC2 instance at launch time?
+1. With metadata
+2. With user data
+3. With a container
+4. With a snapshot
+   
+Question 6: Which service allows you to run Docker containers on AWS?
+1. Amazon EC2
+2. AWS Lambda
+3. Amazon ECS
+4. Amazon EBS
+   
+Question 7: Which service is good for running compute workloads for people who don't 
+have technical expertise with AWS?
+1. Amazon ECS
+2. Amazon EC2
+3. Amazon LightSail
+4. AWS Lambda
+   
+### AWS COMPUTE ANSWERS
+
+Question: Question 1: Which of the following is NOT a benefit of AWS Lambda?
+1. No servers to manage
+2. Pay only when your code is running
+3. Continuous scaling
+4. Multiple instance types to choose from
+Answer: 4
+
+Explanation:
+1 is incorrect. This is a benefit of AWS Lambda - there are no servers to manage which 
+is why it is known as a "serverless" service
+2 is incorrect. You do only pay when your code is running, and this is a great benefit of AWS Lambda
+3 is incorrect. AWS Lambda includes continuous scaling which means it elastically adjusts to demand
+4 is correct. As AWS Lambda is a serverless service, there are no instance types to choose from
+
+Question 2: Which service can assist a developer with quickly deploying and managing a 
+web application on AWS?
+1. AWS CloudFormation
+2. AWS Elastic Beanstalk
+Answer: 2
+Explanation:
+1 is incorrect. Think of CloudFormation as deploying infrastructure as code, whilst 
+Elastic Beanstalk is more focused on deploying applications on EC2 (PaaS)
+2 is correct. AWS Elastic Beanstalk can be used to quickly deploy and manage 
+applications in the AWS Cloud
+
+Question 3: AWS Elastic Beanstalk is an example of which cloud computing service 
+model?
+1. On-premises
+2. Infrastructure as a Service (IaaS)
+3. Platform as a Service (PaaS)
+4. Software as a Service (SaaS)
+Answer: 3
+Explanation:
+1 is incorrect. Elastic Beanstalk cannot be used on-premises
+2 is incorrect. An example of IaaS is Amazon EC2
+3 is correct. Elastic Beanstalk is considered to be a PaaS service. This means the 
+underlying infrastructure and the runtime engine are managed for you and you only 
+need to upload the code
+4 is incorrect. Examples of SaaS are Salesforce, Facebook and Gmail
+
+Question 4: What is a benefit of Amazon EC2 compared to traditional servers?
+1. You can use specialized hardware
+2. You have more control over the operating system
+3. You can scale elastically within minutes
+4. You get more compute power in the cloud
+Answer: 3
+Explanation:
+1 is incorrect. You cannot use specialized hardware in the cloud. You launch instances 
+on the AWS platform and have no control over the hardware they use
+2 is incorrect. You don't have any more control over the operating system in the cloud 
+as in both on-premise and the cloud you have full control
+3 is correct. This is a key benefit of the AWS Cloud. You can elastically increase or 
+decrease capacity by changing instance types whenever you need to
+4 is incorrect. This is not necessarily true. You can build very powerful compute 
+platforms in your own data center (however it would be very expensive)
+
+Question 5: How can you run commands on an Amazon EC2 instance at launch time?
+1. With metadata
+2. With user data
+3. With a container
+4. With a snapshot
+Answer: 2
+Explanation:
+1 is incorrect. Metadata is information about the instance. You can use metadata for 
+finding information such as the availability zone an instance is in or its IP address
+2 is correct. User data can be run at instance launch time. You can use it to run 
+commands
+3 is incorrect. Containers are another type of compute type; you cannot use a 
+container to run commands on an EC2 instance at launch time
+4 is incorrect. Snapshots are copies of EBS volumes that can be used as a backup
+
+Question 6: Which service allows you to run Docker containers on AWS?
+1. Amazon EC2
+2. AWS Lambda
+3. Amazon ECS
+4. Amazon EBS
+Answer: 3
+Explanation:
+1 is incorrect. Amazon EC2 is not the service that enables you to use Docker. However, 
+with the EC2 launch type it is used to run the container platform
+2 is incorrect. AWS Lambda is used to run functions, not Docker containers
+3 is correct. Amazon Elastic Container Service (ECS) is used to run Docker containers on AWS
+4 is incorrect. Amazon Elastic Block Store (EBS) is a storage solution that creates 
+"virtual hard drives in the cloud"
+
+Question 7: Which service is good for running compute workloads for people who don't 
+have technical expertise with AWS?
+1. Amazon ECS
+2. Amazon EC2
+3. Amazon LightSail
+4. AWS Lambda
+Answer: 3
+Explanation:
+1 is incorrect. Managing Amazon ECS requires good technical knowledge of AWS
+2 is incorrect. Managing Amazon EC2 requires good technical knowledge of AWS
+3 is correct. Amazon LightSail is great for users who do not have deep AWS technical 
+expertise as it makes it very easy to provision compute services
+4 is incorrect. Managing AWS Lambda requires good technical knowledge of AWS
+
