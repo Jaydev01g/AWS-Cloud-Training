@@ -1,4 +1,4 @@
-### Module 3: Exam Preparation
+### Module 2: Exam Preparation
 
 #### AWS Exam Blueprint
 - **Domains and Objectives**: The exam blueprint outlines the key domains and objectives that will be tested. These include:
@@ -46,7 +46,4 @@
 - **IAM Overview**: IAM enables you to manage access to AWS services and resources securely.
 - **Features**: Create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
 
-This detailed breakdown should help you create comprehensive notes for Module 3. If you need more specific information or additional sections, feel free to ask! 😊
-
-Source: Conversation with Copilot, 1/10/2025
-(1) AWS-Cloud-Training/README.md at main · Jaydev01g/AWS-Cloud-Training. https://github.com/Jaydev01g/AWS-Cloud-Training/tree/main.
+Source: AWS-Cloud-Training/README.md at main · Jaydev01g/AWS-Cloud-Training. https://github.com/Jaydev01g/AWS-Cloud-Training/tree/main.
