@@ -1,5 +1,8 @@
 # AWS-Cloud-Training
 
+![image](https://github.com/user-attachments/assets/1764c28c-6bcb-4b4b-92da-9c3004be7eb8)
+
+
 # Module 1: Welcome and Introduction
 Overview of AWS Cloud Practitioner Certification
 
