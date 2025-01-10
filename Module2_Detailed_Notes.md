@@ -291,14 +291,22 @@ This identity is called the AWS account root user and is accessed by signing in 
 email address and password that you used to create the account.
 IAM can be used to manage:
 • Users.
+
 • Groups.
+
 • Access policies.
+
 • Roles.
+
 • User credentials.
+
 • User password policies.
+
 • Multi-factor authentication (MFA).
+
 • API keys for programmatic access (CLI).
-IAM provides the following features:
+
+#### IAM provides the following features:
 • Shared access to your AWS account.
 • Granular permissions.
 • Secure access to AWS resources for application that run on Amazon EC2.
@@ -309,11 +317,13 @@ IAM provides the following features:
 • Integrated with many AWS services.
 • Eventually consistent.
 • Free to use.
+
 You can work with AWS Identity and Access Management in any of the following ways:
 • AWS Management Console.
 • AWS Command Line Tools.
 • AWS SDKs.
 • IAM HTTPS API.
+
 By default, new users are created with NO access to any AWS services – they can only login 
 to the AWS console.
 Permission must be explicitly granted to allow a user to access an AWS service.
@@ -332,6 +342,7 @@ Multi-factor authentication (MFA) can be enabled/enforced for the AWS account an
 individual users under the account.
 MFA uses an authentication device that continually generates random, six-digit, single-use 
 authentication codes.
+
 You can authenticate using an MFA device in the following two ways:
 • Through the AWS Management Console – the user is prompted for a user name, 
 password, and authentication code.
@@ -340,69 +351,71 @@ request temporary security credentials and pass MFA parameters in their AWS STS
 API requests.
 • Using the AWS CLI by obtaining temporary security credentials from STS (aws sts 
 get-session-token).
+
 It is a best practice to always setup multi-factor authentication on the root account.
 IAM is universal (global) and does not apply to regions.
 IAM replicates data across multiple data centers around the world.
 The “root account” is the account created when you setup the AWS account. It has 
 complete Admin access and is the only account that has this access by default.
-It is a best practice to avoid using the root account for anything other than billing.
-Power user access allows all permissions except the management of groups and users in 
-IAM.
+It is a best practice to avoid using the root account for anything other than billing. Power user access allows all permissions except the management of groups and users in IAM.
 Temporary security credentials consist of the AWS access key ID, secret access key, and 
 security token.
+
 IAM can assign temporary security credentials to provide users with temporary access to 
 services/resources.
+
 To sign-in you must provide your account ID or account alias in addition to a user name 
 and password.
+
 The sign-in URL includes the account ID or account alias, e.g.:
 https://My_AWS_Account_ID.signin.aws.amazon.com/console/.
+
 Alternatively, you can sign-in at the following URL and enter your account ID or alias.
 manually:
 https://console.aws.amazon.com/
+
 IAM integrates with many different AWS services.
-Authentication Methods
+
+### Authentication Methods
 Console password:
-• A password that the user can enter to sign in to interactive sessions such as the 
-#### AWS Management Console.
+• A password that the user can enter to sign in to interactive sessions such as the AWS Management Console.
+
 • You can allow users to change their own passwords.
-• You can allow selected IAM users to change their passwords by disabling the 
-option for all users and using an IAM policy to grant permissions for the selected 
-users.
+
+• You can allow selected IAM users to change their passwords by disabling the option for all users and using an IAM policy to grant permissions for the selected users.
+
 Access Keys:
 • A combination of an access key ID and a secret access key.
 • You can assign two active access keys to a user at a time.
-• These can be used to make programmatic calls to AWS when using the API in 
-program code or at a command prompt when using the AWS CLI or the AWS 
-PowerShell tools.
+• These can be used to make programmatic calls to AWS when using the API in program code or at a command prompt when using the AWS CLI or the AWS PowerShell tools.
 • You can create, modify, view, or rotate access keys.
 • When created IAM returns the access key ID and secret access key.
-• The secret access is returned only at creation time and if lost a new key must be 
-created.
+• The secret access is returned only at creation time and if lost a new key must be created.
 • Ensure access keys and secret access keys are stored securely.
-• Users can be given access to change their own keys through IAM policy (not from 
-the console).
+• Users can be given access to change their own keys through IAM policy (not from the console).
 • You can disable a user’s access key which prevents it from being used for API calls.
+
 Server certificates:
 • SSL/TLS certificates that you can use to authenticate with some AWS services.
-• AWS recommends that you use the AWS Certificate Manager (ACM) to provision, 
-manage and deploy your server certificates.
+• AWS recommends that you use the AWS Certificate Manager (ACM) to provision, manage and deploy your server certificates.
 • Use IAM only when you must support HTTPS connections in a region that is not 
 supported by ACM.
+
 #### IAM USERS
 An IAM user is an entity that represents a person or service.
 Can be assigned:
-• An access key ID and secret access key for programmatic access to the AWS API, 
-CLI, SDK, and other development tools.
+• An access key ID and secret access key for programmatic access to the AWS API, CLI, SDK, and other development tools.
 • A password for access to the management console.
+
 By default, users cannot access anything in your account.
-The account root user credentials are the email address used to create the account and a 
-password.
+The account root user credentials are the email address used to create the account and a password.
 The root account has full administrative permissions, and these cannot be restricted.
 Best practice for root accounts:
 • Don’t use the root user credentials.
 • Don’t share the root user credentials.
 • Create an IAM user and assign administrative permissions as required.
 • Enable MFA.
+
 IAM users can be created to represent applications, and these are known as “service 
 accounts”.
 You can have up to 5000 users per AWS account.
