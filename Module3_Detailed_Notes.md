@@ -351,3 +351,516 @@ Explanation:
 expertise as it makes it very easy to provision compute services
 4 is incorrect. Managing AWS Lambda requires good technical knowledge of AWS
 
+
+## AWS STORAGE
+This article discusses AWS Compute in the context of the AWS Certified Cloud Practitioner 
+Exam. This is one of the key technology areas covered in the exam guide.
+### AMAZON SIMPLE STORAGE SERVICE (S3)
+Amazon S3 is object storage built to store and retrieve any amount of data from anywhere 
+– web sites and mobile apps, corporate applications, and data from IoT sensors or devices.
+You can store any type of file in S3.
+S3 is designed to deliver 99.999999999% durability, and stores data for millions of 
+applications used by market leaders in every industry.
+S3 provides comprehensive security and compliance capabilities that meet even the most 
+stringent regulatory requirements.
+S3 gives customers flexibility in the way they manage data for cost optimization, access 
+control, and compliance.
+Typical use cases include:
+• Backup and Storage – Provide data backup and storage services for others.
+• Application Hosting – Provide services that deploy, install, and manage web 
+applications.
+• Media Hosting – Build a redundant, scalable, and highly available infrastructure 
+that hosts video, photo, or music uploads and downloads.
+• Software Delivery – Host your software applications that customers can download.
+• Static Website – you can configure a static website to run from an S3 bucket.
+S3 provides query-in-place functionality, allowing you to run powerful analytics directly on 
+your data at rest in S3. And Amazon S3 is the most supported cloud storage service 
+available, with integration from the largest community of third-party solutions, systems 
+integrator partners, and other AWS services.
+Files can be anywhere from 0 bytes to 5 TB.
+There is unlimited storage available.
+Files are stored in buckets.
+Buckets are root level folders.
+Any subfolder within a bucket is known as a “folder”.
+S3 is a universal namespace so bucket names must be unique globally.
+There are seven S3 storage classes.
+• S3 Standard (durable, immediately available, frequently accessed).
+• S3 Intelligent-Tiering (automatically moves data to the most cost-effective tier).
+• S3 Standard-IA (durable, immediately available, infrequently accessed).
+• S3 One Zone-IA (lower cost for infrequently accessed data with less resilience).
+• S3 Glacier Instant Retrieval (data that is rarely accessed and requires retrieval in 
+milliseconds).
+• S3 Glacier Flexible Retrieval (archived data, retrieval times in minutes or hours).
+• S3 Glacier Deep Archive (lowest cost storage class for long term retention).
+The table below provides the details of each Amazon S3 storage class:
+![image](https://github.com/user-attachments/assets/c9c76861-99b7-4847-bb15-c8cdd67565be)
+When you successfully upload a file to S3 you receive a HTTP 200 code.
+S3 is a persistent, highly durable data store.
+Persistent data stores are non-volatile storage systems that retain data when powered off.
+This contrasts with transient data stores and ephemeral data stores which lose the data 
+when powered off.
+The following table provides a description of persistent, transient, and ephemeral data 
+stores and which AWS service to use:
+![image](https://github.com/user-attachments/assets/88b1b379-0bee-4d61-920b-b2c94a169e2c)
+![image](https://github.com/user-attachments/assets/ecd5503a-37d8-4ba7-ab91-1ca46d176695)
+Bucket names must follow a set of rules:
+• Names must be unique across all of AWS.
+• Names must be 3 to 63 characters in length.
+• Names can only contain lowercase letters, numbers, and hyphens.
+• Names cannot be formatted as an IP address.
+Objects consist of:
+• Key (name of the object).
+• Value (data made up of a sequence of bytes).
+• Version ID (used for versioning).
+• Metadata (data about the data that is stored).
+Subresources:
+• Access control lists.
+• Torrent.
+Object sharing – the ability to make any object publicly available via a URL.
+Lifecycle management – set rules to transfer objects between storage classes at defined 
+time intervals.
+Versioning – automatically keep multiple versions of an object (when enabled).
+Encryption can be enabled for bucket.
+Data is secured using ACLs and bucket policies.
+Charges:
+• Storage.
+• Requests.
+• Storage management pricing.
+• Data transfer pricing.
+• Transfer acceleration.
+When you create a bucket, you need to select the region where it will be created.
+It is a best practice to create buckets in regions that are physically closest to your users to 
+reduce latency.
+Additional capabilities offered by Amazon S3 include:![image](https://github.com/user-attachments/assets/5cafdcb1-0fd8-4c38-91da-194b4fe3d3d6)![image](https://github.com/user-attachments/assets/38f565bf-2b80-469a-b995-4ef76d500b29)
+
+### AWS SNOWBALL
+With AWS Snowball (Snowball), you can transfer hundreds of terabytes or petabytes of 
+data between your on-premises data centers and Amazon Simple Storage Service (Amazon 
+S3).
+Uses a secure storage device for physical transportation.
+AWS Snowball Client is software that is installed on a local computer and is used to 
+identify, compress, encrypt, and transfer data.
+Uses 256-bit encryption (managed with the AWS KMS) and tamper-resistant enclosures 
+with TPM.
+The table below describes the AWS Snow offerings at a high-level:![image](https://github.com/user-attachments/assets/d7941fe3-5f03-48d9-aaba-06ed42d88452)
+Snowball can import to S3 or export from S3.
+Import/export is when you send your own disks into AWS – this is being deprecated in 
+favor of Snowball.
+Snowball must be ordered from and returned to the same region.
+To speed up data transfer it is recommended to run simultaneous instances of the AWS 
+Snowball Client in multiple terminals and transfer small files as batches.
+
+### AMAZON ELASTIC BLOCK STORE (EBS)
+Amazon Elastic Block Store (Amazon EBS) provides persistent block storage volumes for 
+use with Amazon EC2 instances in the AWS Cloud.
+Each Amazon EBS volume is automatically replicated within its Availability Zone to protect 
+you from component failure, offering high availability and durability.
+Amazon EBS volumes offer the consistent and low-latency performance needed to run your workloads. With Amazon EBS, you can scale your usage up or down within minutes –
+all while paying a low price for only what you provision.
+The following EBS volumes appear most often on the AWS exams:![image](https://github.com/user-attachments/assets/739cff8a-2b25-4bc6-b32f-c584eba43cf6)
+EBS volume data persists independently of the life of the instance.
+EBS volumes do not need to be attached to an instance.
+You can attach multiple EBS volumes to an instance.
+You cannot attach an EBS volume to multiple instances (use Elastic File Store instead).
+EBS volumes must be in the same AZ as the instances they are attached to.
+Termination protection is turned off by default and must be manually enabled (keeps the 
+volume/data when the instance is terminated).
+Root EBS volumes are deleted on termination by default.
+Extra non-boot volumes are not deleted on termination by default.
+The behavior can be changed by altering the “DeleteOnTermination” attribute.
+EBS Snapshots:
+• Snapshots capture a point-in-time state of an instance.
+• Snapshots are stored on S3.
+• Does not provide granular backup (not a replacement for backup software).
+• If you make periodic snapshots of a volume, the snapshots are incremental, which 
+means that only the blocks on the device that have changed after your last 
+snapshot are saved in the new snapshot.
+• Even though snapshots are saved incrementally, the snapshot deletion process is 
+designed so that you need to retain only the most recent snapshot to restore the 
+volume.
+• Snapshots can only be accessed through the EC2 APIs.
+• EBS volumes are AZ specific, but snapshots are region specific.
+
+## INSTANCE STORE VOLUMES
+Instance store volumes are high performance local disks that are physically attached to the 
+host computer on which an EC2 instance runs.
+Instance stores are ephemeral which means the data is lost when powered off (nonpersistent).
+Instances stores are ideal for temporary storage of information that changes frequently, 
+such as buffers, caches, or scratch data.
+Instance store volume root devices are created from AMI templates stored on S3.
+Instance store volumes cannot be detached/reattached.
+
+## AMAZON ELASTIC FILE SYSTEM (EFS)
+EFS is a fully managed service that makes it easy to set up and scale file storage in the 
+Amazon Cloud.
+Good for big data and analytics, media processing workflows, content management, web 
+serving, home directories etc.
+EFS uses the NFS protocol.
+Pay for what you use (no pre-provisioning required).
+Can scale up to petabytes.
+EFS is elastic and grows and shrinks as you add and remove data.
+Can concurrently connect 1 to 1000s of EC2 instances, from multiple AZs.
+A file system can be accessed concurrently from all AZs in the region where it is located.
+By default, you can create up to 10 file systems per account.
+On-premises access can be enabled via Direct Connect or AWS VPN.
+Can choose General Purpose or Max I/O (both SSD).
+The VPC of the connecting instance must have DNS hostnames enabled.
+EFS provides a file system interface, file system access semantics (such as strong 
+consistency and file locking).
+Data is stored across multiple AZs within a region.
+Read after write consistency.
+Need to create mount targets and choose AZs to include (recommended to include all 
+AZ’s).
+Instances can be behind an ELB.
+
+There are two performance modes:
+• “General Purpose” performance mode is appropriate for most file systems.
+• “Max I/O” performance mode is optimized for applications where tens, hundreds, 
+or thousands of EC2 instances are accessing the file system.
+
+### AWS STORAGE GATEWAY
+AWS Storage Gateway is a hybrid cloud storage service that gives you on-premises access 
+to virtually unlimited cloud storage.
+Customers use Storage Gateway to simplify storage management and reduce costs for key 
+hybrid cloud storage use cases.
+These include moving backups to the cloud, using on-premises file shares backed by cloud 
+storage, and providing low latency access to data in AWS for on-premises applications.
+To support these use cases, Storage Gateway offers three different types of gateways:
+• File Gateway – provides file system interfaces to on-premises servers.
+• Volume Gateway – provides block-based access for on-premises servers.
+• Tape Gateway – provides a virtual tape library that is compatible with common 
+backup software (block and file interfaces).
+#### AWS STORAGE QUIZ QUESTIONS
+
+Answers and explanations are provided below after the last question in this section.
+
+Question 1: What is the most cost-effective storage tier for data that is not often 
+accessed, will be retained for 7 years, and needs to be retrievable within 24 hours?
+1. Amazon S3 Standard
+2. Amazon S3 Glacier
+3. Amazon S3 Standard-Infrequent Access
+4. Amazon S3 Glacier Deep Archive
+   
+Question 2: Which storage classes are available for the Amazon Elastic File System?
+1. Standard, Provisioned Throughput
+2. Standard, Deep Archive
+3. Standard, Infrequent Access Storage
+4. Standard, One-Zone IA
+   
+Question 3: Amazon S3 is an example of what type of storage system?
+1. Object
+2. Block
+3. File
+4. Hybrid
+   
+Question 4: With Amazon S3, objects are stored in which type of root-level container?
+1. A folder
+2. A file-system
+3. A bucket
+4. A region
+   
+Question 5: Amazon Elastic Block Store (EBS) volumes are stored within which construct?
+1. A region
+2. An edge location
+3. A snapshot
+4. An availability zone
+   
+Question 6: Which storage service can be used on-premises to access cloud storage?
+1. Amazon S3 Glacier
+2. Amazon Storage Block
+3. AWS Storage Gateway
+4. AWS Hybrid Service
+   
+Question 7: With default settings, what will happen to a root EBS volume when the 
+Amazon EC2 instance is terminated?
+1. It will be deleted
+2. It will be retained
+3. A snapshot will be retained
+4. An AMI will be created
+   
+Question 8: Which Amazon Machine Image can be used to mount an Amazon Elastic File 
+System (EFS) file system?
+1. Microsoft Windows Server 2019 with Containers
+2. Microsoft Windows Server 2016 Core
+3. Amazon Linux 2 AMI
+4. All of the above
+Question 9: Which storage device is physically attached to the Amazon EC2 host servers?
+1. Amazon Elastic Block Store (EBS) volume
+2. Amazon Machine Image (AMI)
+3. Instance Store volume
+4. Elastic Network Adapter
+Question 10: Which Amazon S3 storage class is used for archiving data for long term 
+retention?
+1. S3 Standard
+2. S3 Intelligent-Tiering
+3. S3 One Zone-IA
+4. S3 Glacier Deep Archive
+Question 11: Which storage service is used by Amazon EC2 instances for the root 
+volume?
+1. Amazon Simple Storage Service (S3)
+2. Amazon Elastic File System (EFS)
+3. Amazon Elastic Block Store (EBS)
+4. Amazon Storage Gateway
+#### AWS STORAGE ANSWERS
+
+Question 1: What is the most cost-effective storage tier for data that is not often 
+accessed, will be retained for 7 years, and needs to be retrievable within 24 hours?
+1. Amazon S3 Standard
+2. Amazon S3 Glacier
+3. Amazon S3 Standard-Infrequent Access
+4. Amazon S3 Glacier Deep Archive
+Answer: 4
+Explanation:
+1 is incorrect. This is not the most affordable option for long term data storage
+2 is incorrect. This is not the most affordable option for long term data storage where 
+retrieval times of 24 hours are acceptable
+3 is incorrect. This is not the most affordable option for long term data storage where 
+retrieval times of 24 hours are acceptable
+4 is correct. This is the most affordable option for long term data storage where 
+retrieval times of 24 hours are acceptable
+
+Question 2: Which storage classes are available for the Amazon Elastic File System?
+1. Standard, Provisioned Throughput
+2. 2. Standard, Deep Archive
+3. Standard, Infrequent Access Storage
+4. Standard, One-Zone IA
+Answer: 3
+Explanation:
+1 is incorrect. Provisioned throughput is not a storage class, it is a way you can get 
+better performance for additional cost
+2 is incorrect. Deep Archive is a tier of Glacier storage, not EFS
+3 is correct. These are the two storage classes available for EFS
+4 is incorrect. One-Zone IA is an Amazon S3 storage class
+
+Question 3: Amazon S3 is an example of what type of storage system?
+1. Object
+2. Block
+3. File
+4. Hybrid
+Answer: 1
+Explanation:
+1 is correct. Amazon Simple Storage Service (S3) is an object-based storage system
+2 is incorrect. Amazon Simple Storage Service (S3) is not a block-based storage system
+3 is incorrect. Amazon Simple Storage Service (S3) is not a file-based storage system
+4 is incorrect. Amazon Simple Storage Service (S3) is not a hybrid storage system. An 
+example of a hybrid storage system would be Amazon Storage Gateway
+
+Question 4: With Amazon S3, objects are stored in which type of root-level container?
+1. A folder
+2. A file-system
+3. A bucket
+4. A region
+Answer: 3
+Explanation:
+1 is incorrect. You can create folders with Amazon S3 to mimic a hierarchy, but they 
+are not root-level containers
+2 is incorrect. Amazon S3 is an object-based storage system, there is no such thing as a 
+file-system
+3 is correct. A bucket is the root-level container in Amazon S3. You upload your objects 
+into buckets
+4 is incorrect. A region is not the root-level container in Amazon S3. Buckets are 
+created within a region
+
+Question 5: Amazon Elastic Block Store (EBS) volumes are stored within which construct?
+1. A region
+2. An edge location
+3. A snapshot
+4. An availability zone
+Answer: 4
+Explanation:
+1 is incorrect. Amazon EBS volumes are not stored within a region. They are stored 
+within another construct that is within a region. Guess again!
+2 is incorrect. An edge location is not where you store EBS volumes. Edge Locations are 
+used by the Amazon CloudFront service and will be discussed later in the course
+3 is incorrect. You don't store an Amazon EBS volume in a snapshot, you take 
+snapshots of EBS volumes to get point-in-time backups of the data in the volume
+4 is correct. Amazon EBS volumes are stored with an availability zone.
+
+Question 6: Which storage service can be used on-premises to access cloud storage?
+1. Amazon S3 Glacier
+2. Amazon Storage Block
+3. AWS Storage Gateway
+4. AWS Hybrid Service
+Answer: 3
+Explanation:
+1 is incorrect. Amazon S3 Glacier is a cloud storage solution used for archiving data
+2 is incorrect. There's no such thing as "Amazon Storage Block"
+3 is correct. AWS Storage Gateway is a hybrid cloud storage service that gives you onpremises access to virtually unlimited cloud storage
+4 is incorrect. There's no such thing as "AWS Hybrid Service"
+
+Question 7: With default settings, what will happen to a root EBS volume when the 
+Amazon EC2 instance is terminated?
+1. It will be deleted
+2. It will be retained
+3. A snapshot will be retained
+4. An AMI will be created
+Answer: 1
+Explanation:
+1 is correct. With default settings an Amazon EBS root volume will be deleted when 
+the instance is terminated
+2 is incorrect. This is, not true with default settings. However, you can configure EBS volumes to be retained by changing the "Delete on termination" attribute
+3 is incorrect. A snapshot is not automatically created when an instance is terminated
+4 is incorrect. An AMI will not be created
+
+Question 8: Which Amazon Machine Image can be used to mount an Amazon Elastic File 
+System (EFS) file system?
+1. Microsoft Windows Server 2019 with Containers
+2. Microsoft Windows Server 2016 Core
+3. Amazon Linux 2 AMI
+4. All of the above
+Answer: 3
+Explanation:
+1 is incorrect. You cannot use Microsoft Windows AMIs with Amazon EFS
+2 is incorrect. You cannot use Microsoft Windows AMIs with Amazon EFS
+3 is correct. Only Linux AMIs can be used with Amazon EFS
+4 is incorrect. You cannot use Microsoft Windows AMIs with Amazon EFS
+
+Question 9: Which storage device is physically attached to the Amazon EC2 host servers?
+1. Amazon Elastic Block Store (EBS) volume
+2. Amazon Machine Image (AMI)
+3. Instance Store volume
+4. Elastic Network Adapter
+Answer: 3
+Explanation:
+1 is incorrect. Amazon EBS volumes are attached over a network, they are not 
+physically attached to the EC2 host servers
+2 is incorrect. An AMI is used to launch an instance, it is not a storage device
+3 is correct. Instance store volumes are physically attached to EC2 host servers. They 
+are ephemeral storage which means the data is lost when powered off
+4 is incorrect. An ENA is not a storage device
+
+Question 10: Which Amazon S3 storage class is used for archiving data for long term 
+retention?
+1. S3 Standard
+2. S3 Intelligent-Tiering
+3. S3 One Zone-IA
+4. S3 Glacier Deep Archive
+1 is incorrect. S3 Standard is durable, immediately available, frequently accessed 
+storage
+2 is incorrect. S3 Intelligent-Tiering automatically moves data to the most costeffective tier
+3 is incorrect. S3 One Zone-IA is lower cost storage for infrequently accessed data with 
+less resilience
+4 is correct. S3 Glacier Deep Archive is the lowest cost storage class for long term 
+retention
+
+Question 11: Which storage service is used by Amazon EC2 instances for the root 
+volume?
+1. Amazon Simple Storage Service (S3)
+2. Amazon Elastic File System (EFS)
+3. Amazon Elastic Block Store (EBS)
+4. Amazon Storage Gateway
+Answer: 3
+Explanation:
+1 is incorrect. Amazon S3 is an object-based storage system and is not used for EC2 
+root volumes
+2 is incorrect. Amazon Elastic File System (EFS) is a file-based storage service. You can 
+mount EFS filesystems to an EC2 instance, but you cannot use them for root volumes
+3 is correct. Amazon Elastic Block Store (EBS) is used for the root volume on EBSbacked instances
+4 is incorrect. Amazon Storage Gateway is a storage solution used for hybrid storage 
+between on-premises and AWS Cloud
+
+
+# AWS NETWORKING
+This article covers AWS Networking which is a key technology area in the Cloud 
+Practitioner exam blueprint
+### AMAZON VIRTUAL PRIVATE CLOUD (VPC)
+A virtual private cloud (VPC) is a virtual network dedicated to your AWS account.
+Analogous to having your own DC inside AWS.
+It is logically isolated from other virtual networks in the AWS Cloud.
+Provides complete control over the virtual networking environment including selection of 
+IP ranges, creation of subnets, and configuration of route tables and gateways.
+You can launch your AWS resources, such as Amazon EC2 instances, into your VPC.
+When you create a VPC, you must specify a range of IPv4 addresses for the VPC in the form 
+of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+This is the primary CIDR block for your VPC.
+A VPC spans all the Availability Zones in the region.
+You have full control over who has access to the AWS resources inside your VPC.
+You can create your own IP address ranges, and create subnets, route tables and network 
+gateways.
+When you first create your AWS account a default VPC is created for you in each AWS 
+region.
+A default VPC is created in each region with a subnet in each AZ.
+By default, you can create up to 5 VPCs per region.You can define dedicated tenancy for a VPC to ensure instances are launched on dedicated 
+hardware (overrides the configuration specified at launch).
+A default VPC is automatically created for each AWS account the first time Amazon EC2 
+resources are provisioned.
+The default VPC has all-public subnets.
+Public subnets are subnets that have:
+• “Auto-assign public IPv4 address” set to “Yes”.
+• The subnet route table has an attached Internet Gateway.
+Instances in the default VPC always have both a public and private IP address.
+AZs names are mapped to different zones for different users (i.e. the AZ “ap-southeast-2a” 
+may map to a different physical zone for a different user).
+Components of a VPC:
+• A Virtual Private Cloud: A logically isolated virtual network in the AWS cloud. You 
+define a VPC’s IP address space from ranges you select.
+• Subnet: A segment of a VPC’s IP address range where you can place groups of 
+isolated resources (maps to an AZ, 1:1).
+• Internet Gateway: The Amazon VPC side of a connection to the public Internet.
+• NAT Gateway: A highly available, managed Network Address Translation (NAT) 
+service for your resources in a private subnet to access the Internet.
+• Hardware VPN Connection: A hardware-based VPN connection between your 
+Amazon VPC and your datacenter, home network, or co-location facility.
+• Virtual Private Gateway: The Amazon VPC side of a VPN connection.
+• Customer Gateway: Your side of a VPN connection.
+• Router: Routers interconnect subnets and direct traffic between Internet 
+gateways, virtual private gateways, NAT gateways, and subnets.
+• Peering Connection: A peering connection enables you to route traffic via private 
+IP addresses between two peered VPCs.
+• VPC Endpoints: Enables private connectivity to services hosted in AWS, from 
+within your VPC without using an Internet Gateway, VPN, Network Address 
+Translation (NAT) devices, or firewall proxies.
+• Egress-only Internet Gateway: A stateful gateway to provide egress only access for 
+IPv6 traffic from the VPC to the Internet.
+Options for securely connecting to a VPC are:
+• AWS managed VPN – fast to setup.
+• Direct Connect – high bandwidth, low-latency but takes weeks to months to setup.
+• VPN CloudHub – used for connecting multiple sites to AWS.
+• Software VPN – use 3rd party software.
+
+An Elastic Network Interface (ENI) is a logical networking component that represents a NIC.
+ENIs can be attached and detached from EC2 instances, and the configuration of the ENI 
+will be maintained.
+Flow Logs capture information about the IP traffic going to and from network interfaces in a VPC.
+Flow log data is stored using Amazon CloudWatch Logs.
+Flow logs can be created at the following levels:
+• VPC.
+• Subnet.
+• Network interface.
+Peering connections can be created with VPCs in different regions (available in most 
+regions now).
+
+### SUBNETS
+After creating a VPC, you can add one or more subnets in each Availability Zone.
+When you create a subnet, you specify the CIDR block for the subnet, which is a subset of 
+the VPC CIDR block.
+Each subnet must reside entirely within one Availability Zone and cannot span zones.
+Types of subnets:
+• If a subnet’s traffic is routed to an internet gateway, the subnet is known as 
+a public subnet.
+• If a subnet doesn’t have a route to the internet gateway, the subnet is known as 
+a private subnet.
+• If a subnet doesn’t have a route to the internet gateway, but has its traffic routed 
+to a virtual private gateway for a VPN connection, the subnet is known as a VPNonly subnet.
+An Internet Gateway is a horizontally scaled, redundant, and highly available VPC 
+component that allows communication between instances in your VPC and the internet.
+### FIREWALLS
+Network Access Control Lists (ACLs) provide a firewall/security layer at the subnet level.
+Security Groups provide a firewall/security layer at the instance level.
+The table below describes some differences between Security Groups and Network ACLs:![image](https://github.com/user-attachments/assets/eb4a57e8-aecf-46c1-b639-454f9770b41a)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
