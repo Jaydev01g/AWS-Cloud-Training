@@ -7,7 +7,7 @@ set of application services over the Internet.
 A cloud services platform such as Amazon Web Services owns and maintains the networkconnected hardware required for these application services, while you provision and use 
 what you need via a web application.
 
-#### THE 6 ADVANTAGES OF CLOUD
+## THE 6 ADVANTAGES OF CLOUD
 You must understand the following 6 advantages of cloud:
 1. Trade capital expense for variable expense.
 2. Benefit from massive economies of scale.
@@ -52,21 +52,21 @@ There are 3 common types of cloud computing model that come up in the exam:
 1. Infrastructure as a service (IaaS).
 2. Platform as a service (PaaS).
 3. Software as a service (SaaS).
-### INFRASTRUCTURE AS A SERVICE (IAAS)
+#### INFRASTRUCTURE AS A SERVICE (IAAS)
 Infrastructure as a Service (IaaS) contains the basic building blocks for cloud IT and typically 
 provide access to networking features, computers (virtual or on dedicated hardware), and 
 data storage space.
 IaaS provides you with the highest level of flexibility and management control over your IT 
 resources and is very similar to the existing IT resources that many IT departments and 
 developers are familiar with today.
-### PLATFORM AS A SERVICE (PAAS)
+#### PLATFORM AS A SERVICE (PAAS)
 Platform as a Service (PaaS) removes the need for your organization to manage the 
 underlying infrastructure (usually hardware and operating systems) and allows you to 
 focus on the deployment and management of your applications.
 This helps you be more efficient as you don’t need to worry about resource procurement, 
 capacity planning, software maintenance, patching, or any of the other undifferentiated 
 heavy lifting involved in running your application.
-### SOFTWARE AS A SERVICE (SAAS)
+#### SOFTWARE AS A SERVICE (SAAS)
 Software as a Service (SaaS) provides you with a completed product that is run and 
 managed by the service provider. In most cases, people referring to Software as a Service 
 are referring to end-user applications.
@@ -78,13 +78,13 @@ and receive email without having to manage feature additions to the email produc
 maintain the servers and operating systems that the email program is running on.
 SaaS provides high availability, fault tolerance, scalability an elasticity.
 
-### TYPES OF CLOUD DEPLOYMENT
+## TYPES OF CLOUD DEPLOYMENT
 There are 3 common types of cloud deployment that come up in the exam:
 1. Public Cloud – e.g. AWS, Microsoft Azure, Google Cloud Platform (GCP).
 2. Hybrid Cloud – a mixture of public and private clouds.
 3. Private Cloud (on-premises) – a cloud managed in your own data center, e.g. 
 Hyper-V, OpenStack, VMware.
-#### PUBLIC CLOUD
+### PUBLIC CLOUD
 A cloud-based application is fully deployed in the cloud and all parts of the application run 
 in the cloud. Applications in the cloud have either been created in the cloud or have been 
 migrated from an existing infrastructure to take advantage of the benefits of cloud 
@@ -92,11 +92,11 @@ computing.
 Cloud-based applications can be built on low-level infrastructure pieces or can use higher 
 level services that provide abstraction from the management, architecting, and scaling 
 requirements of core infrastructure.
-#### HYBRID
+### HYBRID
 A hybrid deployment is a way to connect infrastructure and applications between cloudbased resources and existing resources that are not located in the cloud.
 The most common method of hybrid deployment is between the cloud and existing onpremises infrastructure to extend, and grow, an organization’s infrastructure into the cloud 
 while connecting cloud resources to the internal system.
-#### ON-PREMISES
+### ON-PREMISES
 The deployment of resources on-premises, using virtualization and resource management tools, is sometimes called the “private cloud.”
 On-premises deployment doesn’t provide many of the benefits of cloud computing but is 
 sometimes sought for its ability to provide dedicated resources.
