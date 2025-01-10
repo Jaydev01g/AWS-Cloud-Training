@@ -35,5 +35,5 @@
   - Recognize the various account structures in relation to AWS billing and pricing.
   - Identify resources available for billing support.
 
-Source:
-AWS-Cloud-Training/README.md at main · Jaydev01g/AWS-Cloud-Training. https://github.com/Jaydev01g/AWS-Cloud-Training/tree/main.
+
+
