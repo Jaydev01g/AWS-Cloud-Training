@@ -166,6 +166,7 @@ located, making it easy to meet regional compliance and data residency requireme
 Note that there is a charge for data transfer between regions.
 When you launch an EC2 instance, you must select an AMI that’s in the same region. If the 
 AMI is in another region, you can copy the AMI to the region you’re using.
+
 #### Regions and Endpoints:
 • When you work with an instance using the command line interface or API actions, 
 you must specify its regional endpoint.
@@ -174,6 +175,7 @@ regional endpoint to make your requests.
 • An endpoint is a URL that is the entry point for a web service.
 • For example, https://dynamodb.us-west-2.amazonaws.com is an entry point for 
 the Amazon DynamoDB service.
+
 #### AVAILABILITY ZONES
 Availability Zones are physically separate and isolated from each other.
 AZs span one or more data centers and have direct, low-latency, high throughput, and 
@@ -200,6 +202,7 @@ AZs use discrete UPS and onsite backup generation facilities and are fed via dif
 from independent facilities.
 AZs are all redundantly connected to multiple tier-1 transit providers.
 The following graphic shows three AWS Regions each of which has three Availability Zones:
+
 #### LOCAL ZONES
 AWS Local Zones place compute, storage, database, and other select AWS services closer 
 to end-users.
@@ -212,6 +215,7 @@ Amazon Elastic Load Balancing in geographic proximity to end-users.
 AWS Local Zones provide a high-bandwidth, secure connection between local workloads 
 and those running in the AWS Region, allowing you to seamlessly connect to the full range 
 of in-region services through the same APIs and tool sets.
+
 #### AWS WAVELENGTH
 AWS Wavelength enables developers to build applications that deliver single-digit 
 millisecond latencies to mobile devices and end-users.
@@ -221,6 +225,7 @@ telecommunications providers’ datacenters at the edge of the 5G networks, and
 seamlessly access the breadth of AWS services in the region.
 AWS Wavelength brings AWS services to the edge of the 5G network, minimizing the 
 latency to connect to an application from a mobile device.
+
 #### AWS OUTPOSTS
 AWS Outposts bring native AWS services, infrastructure, and operating models to virtually any data center, co-location space, or on-premises facility.
 You can use the same AWS APIs, tools, and infrastructure across on-premises and the AWS 
@@ -228,13 +233,14 @@ cloud to deliver a truly consistent hybrid experience.
 AWS Outposts is designed for connected environments and can be used to support 
 workloads that need to remain on-premises due to low latency or local data processing 
 needs.
+
 #### EDGE LOCATIONS AND REGIONAL EDGE CACHES
 Edge locations are Content Delivery Network (CDN) endpoints for CloudFront.
 There are many more edge locations than regions.
 Currently there are over 200 edge locations.
 Regional Edge Caches sit between your CloudFront Origin servers and the Edge Locations.
 A Regional Edge Cache has a larger cache-width than each of the individual Edge Locations.
-The following diagram shows CloudFront Edge locations:
+
 #### AWS GLOBAL INFRASTRUCTURE QUIZ 
 ##### QUESTIONS
 Answers and explanations are provided below after the last question in this section.
@@ -279,16 +285,22 @@ more data centers
 3 is incorrect. There are always at least 2 availability zones in a region
 4 is incorrect. EC2 instances, which are computer instances, run in a VPC and within a 
 region, but this is not how we define a region.
+
 #### AWS IAM
 AWS Identity and Access Management (IAM) is a web service that helps you securely 
 control access to AWS resources.
+
 You use IAM to control who is authenticated (signed in) and authorized (has permissions) 
 to use resources.
+
 IAM makes it easy to provide multiple users secure access to AWS resources.
+
 When you first create an AWS account, you begin with a single sign-in identity that has 
 complete access to all AWS services and resources in the account.
+
 This identity is called the AWS account root user and is accessed by signing in with the 
 email address and password that you used to create the account.
+
 IAM can be used to manage:
 • Users.
 
@@ -578,7 +590,6 @@ Question 2: What is the main credential for an AWS root account?
 Answer: 3
 Explanation:
 1 is incorrect. Administrator is not a credential used with AWS
-© 2025 Digital Cloud Training 36
 2 is incorrect. root is the username associated with some operating systems such as 
 Linux, it is not an actual user name used in your AWS account
 3 is correct. The account root user credential is the email address used to create the 
