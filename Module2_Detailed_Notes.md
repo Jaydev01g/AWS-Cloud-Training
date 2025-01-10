@@ -448,6 +448,206 @@ permissions to AWS API requests using instance profiles.
 automatic and transparent through the console).
 • Applications retrieve temporary security credentials from the instance metadata.
 
+## AWS SECURITY TOKEN SERVICE (AWS STS)
+The AWS STS is a web service that enables you to request temporary, limited-privilege 
+credentials for IAM users or for users that you authenticate (federated users).
+Temporary security credentials work almost identically to long-term access key credentials 
+that IAM users can use, with the following differences:
+• Temporary security credentials are short-term.
+• They can be configured to last anywhere from a few minutes to several hours.
+• After the credentials expire, AWS no longer recognizes them or allows any kind of 
+access to API requests made with them.
+• Temporary security credentials are not stored with the user but are generated 
+dynamically and provided to the user when requested.
+• When (or even before) the temporary security credentials expire, the user can 
+request new credentials, if the user requesting them still has permission to do so.
+Advantages of STS are:
+• You do not have to distribute or embed long-term AWS security credentials with 
+an application.
+• You can provide access to your AWS resources to users without having to define an 
+AWS identity for them (temporary security credentials are the basis for IAM Roles 
+and ID Federation).
+• The temporary security credentials have a limited lifetime, so you do not have to 
+rotate them or explicitly revoke them when they’re no longer needed.
+• After temporary security credentials expire, they cannot be reused (you can specify 
+how long the credentials are valid for, up to a maximum limit)
+Users can come from three sources.
+1) Federation (typically AD):
+• Uses SAML 2.0.
+• Grants temporary access based on the users AD credentials.
+• Does not need to be a user in IAM.
+• Single sign-on allows users to login to the AWS console without assigning IAM 
+credentials.
+2) Federation with Mobile Apps:
+• Use Facebook/Amazon/Google or other OpenID providers to login.
+3) Cross Account Access:
+• Allows users from one AWS account access resources in another.
+• To make a request in a different account the resource in that account must have 
+an attached resource-based policy with the permissions you need.
+• Or you must assume a role (identity-based policy) within that account with the 
+permissions you need.
+
+## IAM BEST PRACTICES
+Lock away the AWS root user access keys.
+Create individual IAM users.
+Use AWS defined policies to assign permissions whenever possible.
+Use groups to assign permissions to IAM users.
+Grant least privilege.
+Use access levels to review IAM permissions.
+Configure a strong password policy for users.
+Enable MFA.
+Use roles for applications that run on AWS EC2 instances.
+Delegate by using roles instead of sharing credentials.
+Rotate credentials regularly.
+Remove unnecessary credentials.
+Use policy conditions for extra security.
+Monitor activity in your AWS account.
+
+### AWS IDENTITY AND ACCESS MANAGEMENT QUIZ 
+#### QUESTIONS
+Answers and explanations are provided below after the last question in this section.
+Question 1: An access key ID and secret access key is associated with which IAM entity?
+1. User
+2. Group
+3. Role
+4. Policy
+Question 2: What is the main credential for an AWS root account?
+1. Administrator
+2. root
+3. The email address used to create the account
+4. The account number
+Question 3: Which principle should be used when assigning permissions to users or 
+groups?
+1. Most privilege
+2. Least privilege
+3. Nesting
+4. Most restrictive
+Question 4: Which IAM entity can be used to delegate permissions?
+1. User 
+2. Group
+3. Role
+4. Policy
+Question 5: How can you add an extra level of security to your root account?
+1. By adding an access key ID and secret access key
+35 © 2025 Digital Cloud Training
+2. By adding multi-factor authentication (MFA)
+3. By setting a strong password
+4. By deleting the root account
+Question 6: Which of the following is NOT an IAM security best practice?
+1. Use groups to assign permissions to IAM users
+2. Configure a strong password policy for users
+3. Grant most privilege
+4. Rotate credentials regularly
+Question 7: By default, users are created with what permissions?
+1. Full permissions
+2. No permissions
+3. Minimal permissions
+4. No access to the AWS management console
+AWS IDENTITY AND ACCESS MANAGEMENT
+ANSWERS
+Question 1: An access key ID and secret access key is associated with which IAM entity?
+1. User
+2. Group
+3. Role
+4. Policy
+Answer: 1
+Explanation:
+1 is correct. An access key ID and secret access key is associated with a user and is used 
+for granting programmatic access using the CLI or API
+2 is incorrect. You cannot assign an access key ID and secret access key to a group
+3 is incorrect. You cannot assign an access key ID and secret access key to a role
+4 is incorrect. You cannot assign an access key ID and secret access key to a policy
+Question 2: What is the main credential for an AWS root account?
+1. Administrator
+2. root
+3. The email address used to create the account
+4. The account number
+Answer: 3
+Explanation:
+1 is incorrect. Administrator is not a credential used with AWS
+© 2025 Digital Cloud Training 36
+2 is incorrect. root is the username associated with some operating systems such as 
+Linux, it is not an actual user name used in your AWS account
+3 is correct. The account root user credential is the email address used to create the 
+account and a password
+4 is incorrect. The account number or alias is used to sign in when using an IAM 
+account, rather than the root credentials
+Question 3: Which principle should be used when assigning permissions to users or 
+groups?
+1. Most privilege
+2. Least privilege
+3. Nesting
+4. Most restrictive
+Answer: 2
+Explanation:
+1 is incorrect. This would be a bad practice as it would provide more privileges to users 
+than they need to perform their jobs
+2 is correct. When assigning permissions always grant the least privileges required. 
+This is a security best practice
+3 is incorrect. Nesting is not a security practice
+4 is incorrect. This would lead to users having too few permissions. You always want to 
+make sure people can perform their jobs whilst not providing too much freedom.
+Question 4: Which IAM entity can be used to delegate permissions?
+1. User 
+2. Group
+3. Role
+4. Policy
+Answer: 3
+Explanation:
+1 is incorrect. You cannot delegate using users
+2 is incorrect. You cannot delegate using Groups, but you can assign permissions to 
+multiple users through groups.
+3 is correct. You can delegate permissions using roles. It's a great way to provide 
+permissions to resources for users and services without using permanent credentials
+4 is incorrect. You cannot delegate using a policy. You delegate using a role and you 
+define permissions to the role through a policy
+Question 5: How can you add an extra level of security to your root account?
+1. By adding an access key ID and secret access key
+2. By adding multi-factor authentication (MFA)
+3. By setting a strong password
+4. By deleting the root account
+Answer: 2
+Explanation:
+1 is incorrect. No, this will not add security. In fact, it's a security best practice to either 
+remove these from your root account or at least minimize their usage
+2 is correct. Adding multi-factor authentication (MFA) to your root account adds an 
+extra level of security as a device is needed to login as well as a username and 
+password. This is a security best practice
+3 is incorrect. This is definitely recommended, however this isn't considered an extra 
+level of security
+4 is incorrect. You cannot delete the root account
+Question 6: Which of the following is NOT an IAM security best practice?
+1. Use groups to assign permissions to IAM users
+2. Configure a strong password policy for users
+3. Grant most privilege
+4. Rotate credentials regularly
+Answer: 3
+Explanation:
+1 is incorrect. This is an IAM security best practice
+2 is incorrect. This is an IAM security best practice
+3 is correct. This is not a security best practice. AWS recommend granting least 
+privilege when assigning permissions
+4 is incorrect. This is an IAM security best practice
+Question 7: By default, users are created with what permissions?
+1. Full permissions
+2. No permissions
+3. Minimal permissions
+4. No access to the AWS management console
+Answer: 2
+Explanation:
+1 is incorrect. Users are not created with full permissions
+2 is correct. Users are created with no permissions. You can then assign permissions 
+using groups and policies
+3 is incorrect. Users are not created with minimal permissions, they are created with 
+no permissions
+4 is incorrect. Users will have access to the AWS management console; however they 
+won't have any permissions to services by default.
+
+
+
+
+
+
 
 
 
