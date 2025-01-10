@@ -531,45 +531,54 @@ Monitor activity in your AWS account.
 ### AWS IDENTITY AND ACCESS MANAGEMENT QUIZ 
 #### QUESTIONS
 Answers and explanations are provided below after the last question in this section.
+
 Question 1: An access key ID and secret access key is associated with which IAM entity?
 1. User
 2. Group
 3. Role
 4. Policy
+
 Question 2: What is the main credential for an AWS root account?
 1. Administrator
 2. root
 3. The email address used to create the account
 4. The account number
+
 Question 3: Which principle should be used when assigning permissions to users or 
 groups?
 1. Most privilege
 2. Least privilege
 3. Nesting
 4. Most restrictive
+
 Question 4: Which IAM entity can be used to delegate permissions?
 1. User 
 2. Group
 3. Role
 4. Policy
+
 Question 5: How can you add an extra level of security to your root account?
 1. By adding an access key ID and secret access key
-35 © 2025 Digital Cloud Training
 2. By adding multi-factor authentication (MFA)
 3. By setting a strong password
 4. By deleting the root account
+
 Question 6: Which of the following is NOT an IAM security best practice?
 1. Use groups to assign permissions to IAM users
 2. Configure a strong password policy for users
 3. Grant most privilege
 4. Rotate credentials regularly
+
 Question 7: By default, users are created with what permissions?
 1. Full permissions
 2. No permissions
 3. Minimal permissions
 4. No access to the AWS management console
-AWS IDENTITY AND ACCESS MANAGEMENT
+
+   
+### AWS IDENTITY AND ACCESS MANAGEMENT
 ANSWERS
+
 Question 1: An access key ID and secret access key is associated with which IAM entity?
 1. User
 2. Group
@@ -582,6 +591,7 @@ for granting programmatic access using the CLI or API
 2 is incorrect. You cannot assign an access key ID and secret access key to a group
 3 is incorrect. You cannot assign an access key ID and secret access key to a role
 4 is incorrect. You cannot assign an access key ID and secret access key to a policy
+
 Question 2: What is the main credential for an AWS root account?
 1. Administrator
 2. root
@@ -596,6 +606,7 @@ Linux, it is not an actual user name used in your AWS account
 account and a password
 4 is incorrect. The account number or alias is used to sign in when using an IAM 
 account, rather than the root credentials
+
 Question 3: Which principle should be used when assigning permissions to users or 
 groups?
 1. Most privilege
@@ -611,6 +622,7 @@ This is a security best practice
 3 is incorrect. Nesting is not a security practice
 4 is incorrect. This would lead to users having too few permissions. You always want to 
 make sure people can perform their jobs whilst not providing too much freedom.
+
 Question 4: Which IAM entity can be used to delegate permissions?
 1. User 
 2. Group
@@ -625,6 +637,7 @@ multiple users through groups.
 permissions to resources for users and services without using permanent credentials
 4 is incorrect. You cannot delegate using a policy. You delegate using a role and you 
 define permissions to the role through a policy
+
 Question 5: How can you add an extra level of security to your root account?
 1. By adding an access key ID and secret access key
 2. By adding multi-factor authentication (MFA)
@@ -640,6 +653,7 @@ password. This is a security best practice
 3 is incorrect. This is definitely recommended, however this isn't considered an extra 
 level of security
 4 is incorrect. You cannot delete the root account
+
 Question 6: Which of the following is NOT an IAM security best practice?
 1. Use groups to assign permissions to IAM users
 2. Configure a strong password policy for users
@@ -652,6 +666,7 @@ Explanation:
 3 is correct. This is not a security best practice. AWS recommend granting least 
 privilege when assigning permissions
 4 is incorrect. This is an IAM security best practice
+
 Question 7: By default, users are created with what permissions?
 1. Full permissions
 2. No permissions
