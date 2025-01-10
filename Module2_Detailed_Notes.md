@@ -102,5 +102,48 @@ On-premises deployment doesn’t provide many of the benefits of cloud computing
 sometimes sought for its ability to provide dedicated resources.
 In most cases this deployment model is the same as legacy IT infrastructure while using application management and virtualization technologies to try and increase resource utilization.
 
+### CLOUD COMPUTING CONCEPTS
+Answers and explanations are provided below after the last question in this section.
+Question 1: What is a key cost advantage of moving to the AWS Cloud?
+1. Many services are free
+2. You can provision what you need and scale on demand
+3. You can deploy services using an API
+4. You can scale almost limitlessly
+Question 2: Which of the following is an advantage of cloud computing?
+1. Trade capital expense for variable expense
+2. Trade operational expense for capital expense
+3. Go global in days
+4. Outsource all application development
+#### CLOUD COMPUTING CONCEPTS ANSWERS
+Question 1: What is a key cost advantage of moving to the AWS Cloud?
+1. Many services are free
+2. You can provision what you need and scale on demand
+3. You can deploy services using an API
+4. You can scale almost limitlessly
+Answer: 2
+Explanation:
+1 is incorrect. This is true, but it's not the best reason to move to AWS as you still have 
+to pay for most compute and storage services
+2 is correct. This is a great reason to move to the cloud and a key cost benefit. This 
+means you are only ever paying for resources that you are actually using, with little 
+or no idle capacity
+3 is incorrect. This is an advantage of the cloud, but not related to cost
+4 is incorrect. This is true but not a key cost advantage.
+Question 2: Which of the following is an advantage of cloud computing?
+1. Trade capital expense for variable expense
+2. Trade operational expense for capital expense
+3. Go global in days
+4. Outsource all application development
+Answer: 1
+Explanation:
+1 is correct. This is an advantage of cloud computing. You can reduce or eliminate 
+capital expense in favor of variable operational expenses
+2 is incorrect. This is the opposite of what you want, it is better to trade capital 
+expense for operational/variable expense
+3 is incorrect. It should be "Go global in minutes"!
+4 is incorrect. You cannot outsource all application development with AWS
+
+
+
 
 
