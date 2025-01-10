@@ -1,4 +1,4 @@
-### Module 3: Exam Preparation
+### Module 2: Exam Preparation
 
 #### AWS Exam Blueprint
 The AWS Certified Cloud Practitioner exam blueprint outlines the key domains and objectives that will be tested. These include:
